@@ -28,18 +28,20 @@ class E3BarChartView: UIView {
         self.barAnimationSpeed = barAnimationSpeed
     }
     
-    public func configure(withData values: [CGFloat], colors: [UIColor]) {
+    public func configure(withData values: [CGFloat], labels: [String], colors: [UIColor]) {
         setupBackView()
         setupBarView()
         
         barView.isAnimated = isBarViewAnimated
         barView.barAnimationSpeed = barAnimationSpeed
         barView.configure(withValues: values, withColors: colors)
+        
+        let coloredLabels = Array(zip(labels,colors))
 
         // Remember to reset frames
         self.layoutIfNeeded()
         let equalHeight = CGFloat((self.backView.frame.height - self.barView.frame.height) / CGFloat(colors.count))
-        setupCategoryCategoryTextViewConstraints(withHeight: equalHeight, colors: colors)
+        setupCategoryCategoryTextViewConstraints(withHeight: equalHeight, coloredLabels: coloredLabels)
     }
     
 }
@@ -49,25 +51,25 @@ extension E3BarChartView {
     // MARK: Private Methods
     
     // Remember to pre compute widths
-    private func setupCategoryCategoryTextViewConstraints(withHeight height: CGFloat, colors: [UIColor]) {
+    private func setupCategoryCategoryTextViewConstraints(withHeight height: CGFloat, coloredLabels: [(String,UIColor)]) {
         
         var prevAnchor: NSLayoutAnchor = self.barView.bottomAnchor
         let blockInset: CGFloat = 5
         
-        for color in colors {
+        for trait in coloredLabels {
             let back = createBackView(withColor: chartBackGroundColor)
             NSLayoutConstraint.activate([back.topAnchor.constraint(equalTo: prevAnchor),
                                          back.leftAnchor.constraint(equalTo: backView.leftAnchor),
                                          back.bottomAnchor.constraint(equalTo: prevAnchor, constant: height),
                                          back.rightAnchor.constraint(equalTo: backView.rightAnchor)])
-            let textView = createCategoryTextView(withColor: chartBackGroundColor, text: "Name")
+            let textView = createCategoryTextView(withColor: chartBackGroundColor, text: trait.0)
 
             // Adding the rightAnchor last makes animation stretch out.
             NSLayoutConstraint.activate([textView.topAnchor.constraint(equalTo: prevAnchor),
                                          textView.leftAnchor.constraint(equalTo: back.leftAnchor, constant: height),
                                          textView.bottomAnchor.constraint(equalTo: prevAnchor, constant: height),
                                          textView.rightAnchor.constraint(equalTo: backView.rightAnchor)])
-            let colorBlock = createBackView(withColor: color)
+            let colorBlock = createBackView(withColor: trait.1)
             colorBlock.layer.cornerRadius = chartCornerRadius
             NSLayoutConstraint.activate([colorBlock.topAnchor.constraint(equalTo: back.topAnchor, constant: blockInset),
                                          colorBlock.leftAnchor.constraint(equalTo: back.leftAnchor, constant: blockInset),
