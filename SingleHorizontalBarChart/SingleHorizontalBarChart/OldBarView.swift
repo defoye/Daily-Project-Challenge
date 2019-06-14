@@ -30,18 +30,18 @@ class OldBarView: BaseView {
         setupCategoryViews()
     }
     
-    func setupBackView() {
+    private func setupBackView() {
         backView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         backView.translatesAutoresizingMaskIntoConstraints = false
         backView.backgroundColor = .white
         
-        print("BarView: backView before layoutIfNeeded is \(backView.frame.width)")
+        print("E3BarView: backView before layoutIfNeeded is \(backView.frame.width)")
         NSLayoutConstraint.activate([backView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
                                      backView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
                                      backView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
                                      backView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
         self.layoutIfNeeded()
-        print("BarView: backView after layoutIfNeeded is \(backView.frame.width)")
+        print("E3BarView: backView after layoutIfNeeded is \(backView.frame.width)")
     }
     
     
@@ -107,18 +107,18 @@ class OldBarView: BaseView {
 
 
 
-//class BaseView: UIView {
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//        setupViews()
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    
-//    func setupViews() {
-//        
-//    }
-//}
+class BaseView: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupViews()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupViews() {
+        
+    }
+}
 

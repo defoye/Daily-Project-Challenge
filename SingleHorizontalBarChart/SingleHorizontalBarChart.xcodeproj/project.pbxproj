@@ -14,8 +14,9 @@
 		5333BF2022B1CBA4006470FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5333BF1E22B1CBA4006470FB /* LaunchScreen.storyboard */; };
 		5333BF2B22B1CBA4006470FB /* SingleHorizontalBarChartTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333BF2A22B1CBA4006470FB /* SingleHorizontalBarChartTests.swift */; };
 		5333BF3622B1CBA4006470FB /* SingleHorizontalBarChartUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333BF3522B1CBA4006470FB /* SingleHorizontalBarChartUITests.swift */; };
-		5333BF4422B1CCA8006470FB /* BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333BF4322B1CCA8006470FB /* BarView.swift */; };
+		5333BF4422B1CCA8006470FB /* E3BarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333BF4322B1CCA8006470FB /* E3BarView.swift */; };
 		5333BF8022B330D1006470FB /* OldBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333BF7F22B330D1006470FB /* OldBarView.swift */; };
+		5333BF8222B33DDC006470FB /* E3BarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5333BF8122B33DDC006470FB /* E3BarChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +50,9 @@
 		5333BF3122B1CBA4006470FB /* SingleHorizontalBarChartUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingleHorizontalBarChartUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5333BF3522B1CBA4006470FB /* SingleHorizontalBarChartUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHorizontalBarChartUITests.swift; sourceTree = "<group>"; };
 		5333BF3722B1CBA4006470FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5333BF4322B1CCA8006470FB /* BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarView.swift; sourceTree = "<group>"; };
+		5333BF4322B1CCA8006470FB /* E3BarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E3BarView.swift; sourceTree = "<group>"; };
 		5333BF7F22B330D1006470FB /* OldBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldBarView.swift; sourceTree = "<group>"; };
+		5333BF8122B33DDC006470FB /* E3BarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E3BarChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +109,9 @@
 				5333BF1C22B1CBA3006470FB /* Assets.xcassets */,
 				5333BF1E22B1CBA4006470FB /* LaunchScreen.storyboard */,
 				5333BF2122B1CBA4006470FB /* Info.plist */,
-				5333BF4322B1CCA8006470FB /* BarView.swift */,
+				5333BF4322B1CCA8006470FB /* E3BarView.swift */,
 				5333BF7F22B330D1006470FB /* OldBarView.swift */,
+				5333BF8122B33DDC006470FB /* E3BarChartView.swift */,
 			);
 			path = SingleHorizontalBarChart;
 			sourceTree = "<group>";
@@ -262,7 +265,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5333BF4422B1CCA8006470FB /* BarView.swift in Sources */,
+				5333BF4422B1CCA8006470FB /* E3BarView.swift in Sources */,
+				5333BF8222B33DDC006470FB /* E3BarChartView.swift in Sources */,
 				5333BF1822B1CBA2006470FB /* ViewController.swift in Sources */,
 				5333BF8022B330D1006470FB /* OldBarView.swift in Sources */,
 				5333BF1622B1CBA2006470FB /* AppDelegate.swift in Sources */,
