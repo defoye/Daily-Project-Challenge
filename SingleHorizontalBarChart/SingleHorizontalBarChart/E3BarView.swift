@@ -10,13 +10,15 @@ import UIKit
 
 class E3BarView: UIView {
 
-    let backView = UIView()
+    public var barBackgroundColor: UIColor = .clear
+    public var isAnimated: Bool = true
+    public var barAnimationSpeed: Double = 2.0
+    private let backView = UIView()
     
     // MARK: Public methods
     
     public func configure(withValues values: [CGFloat], withColors colors: [UIColor]) {
         setupBackView()
-        //setupSeparatorViews()
         setupCategoryViews(values: values, colors: colors)
     }
 }
@@ -26,31 +28,14 @@ extension E3BarView {
     // MARK: Private methods
     
     private func setupCategoryViews(values: [CGFloat], colors: [UIColor]) {
-        // lambdas <3
-        let total: CGFloat = values.reduce(0, +)
-        let weights = computeWidthWeights(values: values, total: total)
+        self.layoutIfNeeded()
+        let length = self.backView.frame.width
+        let weights = E3BarChartView.computeWeightedLengths(values: values, length: length)
         var tuples: [(CGFloat, UIColor)] = []
         // so pretty :)
         tuples = Array(zip(weights,colors))
         
         setupCategoryViewConstraints(withTraits: tuples)
-    }
-    
-    // TODO: computeWidthWeights is deprecated!!
-    /**
-     May look to combine with function I am about to write to compute height weights. I just don't want to make a utility function 
-    */
-    private func computeWidthWeights(values: [CGFloat], total: CGFloat) -> [CGFloat] {
-        // Reset backView frame width
-        self.layoutIfNeeded()
-        let areaWidth = self.backView.frame.width
-        var weights: [CGFloat] = []
-        
-        for value in values {
-            weights.append((value/total) * areaWidth)
-        }
-        
-        return weights
     }
     
     // Remember to pre compute widths
@@ -69,8 +54,10 @@ extension E3BarView {
             prevAnchor = category.rightAnchor
         }
         
-        UIView.animate(withDuration: 2.0) {
-            self.layoutIfNeeded()
+        if isAnimated {
+            UIView.animate(withDuration: barAnimationSpeed) {
+                self.layoutIfNeeded()
+            }
         }
     }
     
@@ -89,7 +76,7 @@ extension E3BarView {
         addSubview(backView)
         backView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
         backView.translatesAutoresizingMaskIntoConstraints = false
-        backView.backgroundColor = .clear
+        backView.backgroundColor = barBackgroundColor
         
         NSLayoutConstraint.activate([backView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
                                      backView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
