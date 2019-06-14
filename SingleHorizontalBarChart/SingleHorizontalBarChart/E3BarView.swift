@@ -1,5 +1,5 @@
 //
-//  BarView.swift
+//  E3BarView.swift
 //  SingleHorizontalBarChart
 //
 //  Created by Ernest DeFoy on 6/12/19.
@@ -8,40 +8,24 @@
 
 import UIKit
 
-class BarView: BaseView {
+class E3BarView: UIView {
 
     let backView = UIView()
     
-    override func setupViews() {
-        addSubview(backView)
-    }
+    // MARK: Public methods
     
-    func configure(withValues values: [CGFloat], withColors colors: [UIColor]) {
+    public func configure(withValues values: [CGFloat], withColors colors: [UIColor]) {
         setupBackView()
         //setupSeparatorViews()
         setupCategoryViews(values: values, colors: colors)
     }
-    
-    func setupBackView() {
-        backView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
-        backView.translatesAutoresizingMaskIntoConstraints = false
-        backView.backgroundColor = .white
-
-        print("BarView: backView before layoutIfNeeded is \(backView.frame.width)")
-        NSLayoutConstraint.activate([backView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
-                                     backView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
-                                     backView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
-                                     backView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
-        self.layoutIfNeeded()
-        print("BarView: backView after layoutIfNeeded is \(backView.frame.width)")
-    }
 }
 
-extension BarView {
+extension E3BarView {
     
-    // MARK: Public methods
+    // MARK: Private methods
     
-    public func setupCategoryViews(values: [CGFloat], colors: [UIColor]) {
+    private func setupCategoryViews(values: [CGFloat], colors: [UIColor]) {
         // lambdas <3
         let total: CGFloat = values.reduce(0, +)
         let weights = computeWidthWeights(values: values, total: total)
@@ -51,12 +35,11 @@ extension BarView {
         
         setupCategoryViewConstraints(withTraits: tuples)
     }
-}
-
-extension BarView {
     
-    // MARK: Private methods
-    
+    // TODO: computeWidthWeights is deprecated!!
+    /**
+     May look to combine with function I am about to write to compute height weights. I just don't want to make a utility function 
+    */
     private func computeWidthWeights(values: [CGFloat], total: CGFloat) -> [CGFloat] {
         // Reset backView frame width
         self.layoutIfNeeded()
@@ -77,7 +60,6 @@ extension BarView {
         
         for trait in traits {
             let category = createCategoryView(withColor: trait.color)
-            print("trait")
             // Adding the rightAnchor last makes animation stretch out.
             NSLayoutConstraint.activate([category.leftAnchor.constraint(equalTo: prevAnchor),
                                          category.topAnchor.constraint(equalTo: self.backView.topAnchor),
@@ -92,16 +74,6 @@ extension BarView {
         }
     }
     
-    private func createCategoryViewArray(withColors colors: [UIColor]) -> [UIView] {
-        var categoryViews = [UIView]()
-        
-        for color in colors {
-            categoryViews.append(createCategoryView(withColor: color))
-        }
-        
-        return categoryViews
-    }
-    
     private func createCategoryView(withColor color: UIColor) -> UIView {
         let categoryView = UIView()
         self.addSubview(categoryView)
@@ -111,19 +83,19 @@ extension BarView {
         
         return categoryView
     }
+    
+    // backView
+    private func setupBackView() {
+        addSubview(backView)
+        backView.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
+        backView.translatesAutoresizingMaskIntoConstraints = false
+        backView.backgroundColor = .clear
+        
+        NSLayoutConstraint.activate([backView.topAnchor.constraint(equalTo: self.topAnchor, constant: 0),
+                                     backView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0),
+                                     backView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0),
+                                     backView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0)])
+    }
 }
 
-class BaseView: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupViews()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupViews() {
-        
-    }
-}
+
