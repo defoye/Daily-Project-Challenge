@@ -1,5 +1,5 @@
 //
-//  E3BarChart.swift
+//  E3BarChartView.swift
 //  SingleHorizontalBarChart
 //
 //  Created by Ernest DeFoy on 6/13/19.
@@ -8,19 +8,32 @@
 
 import UIKit
 
-class E3BarChart: UIView {
+class E3BarChartView: UIView {
     
     public var chartBackGroundColor: UIColor = .clear
     public var chartCornerRadius: CGFloat = 8.0
     public var chartTextColor: UIColor = .black
+    public var chartAnimationSpeed: Double = 10.0
+    public var barAnimationSpeed: Double = 10.0
+    public var isChartAnimated: Bool = true
+    public var isBarViewAnimated: Bool = true
     
     private let backView = UIView()
     private let barView = E3BarView()
     
-    public func configure(values: [CGFloat], colors: [UIColor]) {
+    public func configure(isChartAnimated: Bool, chartAnimationSpeed: Double, barAnimationSpeed: Double) {
+        self.isChartAnimated = isChartAnimated
+        self.isBarViewAnimated = isChartAnimated
+        self.chartAnimationSpeed = chartAnimationSpeed
+        self.barAnimationSpeed = barAnimationSpeed
+    }
+    
+    public func configure(withData values: [CGFloat], colors: [UIColor]) {
         setupBackView()
         setupBarView()
         
+        barView.isAnimated = isBarViewAnimated
+        barView.barAnimationSpeed = barAnimationSpeed
         barView.configure(withValues: values, withColors: colors)
 
         // Remember to reset frames
@@ -31,7 +44,7 @@ class E3BarChart: UIView {
     
 }
 
-extension E3BarChart {
+extension E3BarChartView {
     
     // MARK: Private Methods
     
@@ -63,8 +76,10 @@ extension E3BarChart {
             prevAnchor = textView.bottomAnchor
         }
         
-        UIView.animate(withDuration: 2.0) {
-            self.layoutIfNeeded()
+        if isBarViewAnimated {
+            UIView.animate(withDuration: chartAnimationSpeed) {
+                self.layoutIfNeeded()
+            }
         }
     }
     
@@ -84,7 +99,7 @@ extension E3BarChart {
     }
 }
 
-extension E3BarChart {
+extension E3BarChartView {
     
     // MARK: Setup funcions for the backView and barView
     
@@ -113,18 +128,17 @@ extension E3BarChart {
     }
 }
 
-extension E3BarChart {
+extension E3BarChartView {
     
     // MARK: Utilities
     
-    public func computeWeights(values: [CGFloat], total: CGFloat, parentView: UIView) -> [CGFloat] {
-        // Reset backView frame width
-        parentView.layoutIfNeeded()
-        let areaWidth = self.backView.frame.width
+    static func computeWeightedLengths(values: [CGFloat], length: CGFloat) -> [CGFloat] {
+        // lambdas <3
+        let total: CGFloat = values.reduce(0, +)
         var weights: [CGFloat] = []
         
         for value in values {
-            weights.append((value/total) * areaWidth)
+            weights.append((value/total) * length)
         }
         
         return weights
