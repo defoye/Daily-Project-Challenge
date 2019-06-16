@@ -1,12 +1,13 @@
 //
 //  AppDelegate.swift
-//  TileGrid
+//  StockFetch
 //
-//  Created by Ernest DeFoy on 6/14/19.
+//  Created by Ernest DeFoy on 6/15/19.
 //  Copyright © 2019 Ernest DeFoy. All rights reserved.
 //
 
 import UIKit
+import Foundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,11 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        let c = ViewController()
-        window?.rootViewController = c
-
+        let fetcher = Fetch()
+        fetcher.fetch()
+        
+        
         return true
     }
 

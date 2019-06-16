@@ -15,15 +15,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let numViewPerRow = 18
+    let numViewPerRow = 50
     var cells = [String : UIView]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let width = view.frame.width / CGFloat(numViewPerRow)
+        let numRows: Int = Int(view.frame.height / width)
         
-        for j in 0...40 {
+        for j in 0...numRows {
             for i in 0...numViewPerRow {
                 let tileView = UIView()
                 tileView.backgroundColor = randomColor()
@@ -40,14 +41,19 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
     }
     
+    func inCellsBounds(i: Int, j: Int) -> Bool {
+        let width = view.frame.width / CGFloat(numViewPerRow)
+        return i >= 0 && i < numViewPerRow && j >= 0 && j < Int(view.frame.height / width)
+    }
+    
     @objc func handlePan(gesture: UIPanGestureRecognizer) {
         let location = gesture.location(in: view)
         
         let width = view.frame.width / CGFloat(numViewPerRow)
         let i = Int(location.x / width)
         let j = Int(location.y / width)
-        let key = "\(i)|\(j)"
 
+        let key = "\(i)|\(j)"
         let tileView = cells[key]
         tileView?.backgroundColor = .white
     }
