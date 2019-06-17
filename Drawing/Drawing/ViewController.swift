@@ -1,8 +1,8 @@
 //
 //  ViewController.swift
-//  StockFetch
+//  Drawing
 //
-//  Created by Ernest DeFoy on 6/15/19.
+//  Created by Ernest DeFoy on 6/16/19.
 //  Copyright © 2019 Ernest DeFoy. All rights reserved.
 //
 
