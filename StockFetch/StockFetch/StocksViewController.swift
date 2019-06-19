@@ -42,7 +42,7 @@ extension StocksViewController {
 			let data = try? Data(contentsOf: url) else {
 				return
 		}
-		
+		self.decode(data)
         view.backgroundColor = .red
         stocksTableView.delegate = self
         stocksTableView.dataSource = self
