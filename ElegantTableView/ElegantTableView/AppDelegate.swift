@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		window = UIWindow(frame: UIScreen.main.bounds)
 		window?.makeKeyAndVisible()
 //		window?.rootViewController = TableViewController()
+		let tableModel = TableViewModelExample()
+		let vc = TableViewController(tableViewModel: tableModel)
+		window?.rootViewController = vc
 		
 		return true
 	}

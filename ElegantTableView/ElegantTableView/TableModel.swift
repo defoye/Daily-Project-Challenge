@@ -9,59 +9,52 @@
 import UIKit
 
 
-// Delegate is the ViewModel
-public typealias CellAction = () -> ()
-// Delegate is the TableViewController
-public typealias DidSelectCellAction = (_ sender: UITableViewCell) -> ()
-
-// Should be a light class.
-public protocol CellViewModeling {
-	var cellIdentifier: String { get }
-	var action: CellAction? { get }
-	var didSelectCellAction: DidSelectCellAction? { get }
-	var height: CGFloat { get }
-
-	func getState<Model>() -> Model
-	
-	init(identifier: String, action: CellAction?)
-}
-
 // The TableViewModel is the true UITableViewDataSource.  At this point, the protocols are
 // very restrictive and I think it's okay to import UIKit.
 public protocol TableViewModeling {
-	var cellTypeMap: [AnyHashable : UITableViewCell.Type] { get }
+//	var cellTypeMap: [AnyHashable : UITableViewCell.Type] { get }
 	
-	func cellTypeForRowAt(indexPath: IndexPath) -> String
+//	func cellTypeForRowAt(indexPath: IndexPath) -> String
+//	func cellIdentifierForRowAt(indexPath: IndexPath) -> String
 	func numberOfSections() -> Int
 	func numberOfRowsInSection(section: Int) -> Int
 	func cellViewModelForRowAt<Model>(indexPath: IndexPath) -> Model
 
 	func setCellDelegate(viewController: UITableViewController)
 	func didSelectCellForRowAt(indexPath: IndexPath)
-	
-	func getStateForRowAt<Model>(indexPath: IndexPath) -> Model
+//	associatedtype Model
+//	func getStateForRowAt(indexPath: IndexPath) -> Model
 }
 
 public class TableViewModelExample: TableViewModeling {
-	public func getStateForRowAt<Model>(indexPath: IndexPath) -> Model {
+	public typealias Model = Sec
+	
+//	public var cellTypeMap: [AnyHashable : UITableViewCell.Type]
+	
+	
+//	public enum SectionType: String {
+//		case RedCellIdentifier
+//		case GreenCellIdentifier
+//		case BlueCellIdentifier
+//	}
+//
+//	public func cellIdentifierForRowAt(indexPath: IndexPath) -> String {
+//		let section = indexPath.section
+//	}
+	
+	public func getStateForRowAt(indexPath: IndexPath) -> Model {
 		return cellViewModels[indexPath.section][indexPath.row].getState()
 	}
 	
 
 	
-	public var cellTypeMap: [AnyHashable : UITableViewCell.Type] = [:]
-	private var cellViewModels = [[CellViewModeling]]()
+//	public var cellTypeMap: [AnyHashable : UITableViewCell.Type] = [:]
+	private var cellViewModels = [TableSectionViewModeling]()
 	
 	public init() {
-		enum CellType: String {
-			case RedCellIdentifier
-			case GreenCellIdentifier
-			case BlueCellIdentifier
-		}
-		
-		cellTypeMap[CellType.RedCellIdentifier] = RedCell.self
-		cellTypeMap[CellType.GreenCellIdentifier] = GreenCell.self
-		cellTypeMap[CellType.BlueCellIdentifier] = BlueCell.self
+		let array: [CellViewModeling] = []
+		CellViewModeling
+		cellViewModels.append()
 	}
 	
 
@@ -71,11 +64,11 @@ public class TableViewModelExample: TableViewModeling {
 	}
 	
 	public func numberOfSections() -> Int {
-		return 1
+		return cellViewModels.count
 	}
 	
 	public func numberOfRowsInSection(section: Int) -> Int {
-		return 3
+		return cellViewModels[section].count
 	}
 	
 	private func didSelectRedCell() {
@@ -93,9 +86,9 @@ public class TableViewModelExample: TableViewModeling {
 }
 
 extension TableViewModelExample {
-	public func cellTypeForRowAt(indexPath: IndexPath) -> String {
-		return cellViewModels[indexPath.section][indexPath.row].cellIdentifier
-	}
+//	public func cellTypeForRowAt(indexPath: IndexPath) -> String {
+//		return cellViewModels[indexPath.section][indexPath.row].cellIdentifier
+//	}
 	
 	private func cellActionForRowAt(indexPath: IndexPath) {
 		cellViewModels[indexPath.section][indexPath.row].action

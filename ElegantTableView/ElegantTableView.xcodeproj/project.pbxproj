@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53A96C9E22C97B9F00B469D9 /* CellViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A96C9D22C97B9F00B469D9 /* CellViewModels.swift */; };
 		53FC31D422C8DF01008D037D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC31D322C8DF01008D037D /* AppDelegate.swift */; };
 		53FC31D622C8DF01008D037D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53FC31D522C8DF01008D037D /* TableViewController.swift */; };
 		53FC31DB22C8DF02008D037D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53FC31DA22C8DF02008D037D /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		53A96C9D22C97B9F00B469D9 /* CellViewModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModels.swift; sourceTree = "<group>"; };
 		53FC31D022C8DF01008D037D /* ElegantTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElegantTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53FC31D322C8DF01008D037D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53FC31D522C8DF01008D037D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				53FC31DC22C8DF02008D037D /* LaunchScreen.storyboard */,
 				53FC31DF22C8DF02008D037D /* Info.plist */,
 				53FC320322C9048B008D037D /* Cells.swift */,
+				53A96C9D22C97B9F00B469D9 /* CellViewModels.swift */,
 			);
 			path = ElegantTableView;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A96C9E22C97B9F00B469D9 /* CellViewModels.swift in Sources */,
 				53FC320222C8DF5F008D037D /* TableModel.swift in Sources */,
 				53FC320422C9048B008D037D /* Cells.swift in Sources */,
 				53FC31D622C8DF01008D037D /* TableViewController.swift in Sources */,

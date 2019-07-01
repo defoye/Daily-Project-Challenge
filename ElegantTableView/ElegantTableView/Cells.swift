@@ -8,20 +8,22 @@
 
 import UIKit
 
-public protocol ConfigurationType {}
-public protocol ModelConfigurable {
-	func configure(with model: ConfigurationType)
-}
+public protocol Conf {}
 
-//struct RedCellViewData {
-//	let backgroundColor: UIColor = .red
+//public class ConfigurableCell: UITableViewCell {
+//	public func configure(with model: Conf) {
+//		// Override
+//	}
 //}
 //
-//class RedCell: UITableViewCell, ModelConfigurable {
-//	func configure(with model: ConfigurationType) {
-//		<#code#>
+//public struct celViewData: Conf {
+//
+//}
+//
+//public class cel: ConfigurableCell {
+//	public override func configure(with model: celViewData) {
+//		// configure
 //	}
-//	
 //}
 
 //
@@ -30,7 +32,7 @@ public protocol ModelConfigurable {
 /////
 //
 
-public protocol DataDisplaying {
+public protocol ModelConfigurable {
 	associatedtype Model
 	func configure(with model: Model)
 }
@@ -38,17 +40,23 @@ public protocol DataDisplaying {
 public protocol SelectableCell {
 	func setDelegate(viewControllerDelegate: UITableViewController)
 }
-
-struct RedCellViewData {
-	let backgroundColor: UIColor = .red
+///
+public protocol CellConfiguring {
+	
 }
-
-class RedCell: UITableViewCell, DataDisplaying {
-	func configure(with model: RedCellViewData) {
-		self.backgroundColor = model.backgroundColor
+public struct RedCellViewData: CellConfiguring {
+	let backgroundColor: UIColor = .red
+	init(backgroundColor: UIColor) {
+		self.backgroundColor = backgroundColor
 	}
 }
 
+public class RedCell: UITableViewCell, ModelConfigurable {
+	public func configure(with model: RedCellViewData) {
+		self.backgroundColor = model.backgroundColor
+	}
+}
+///
 struct GreenCellViewData {
 	let buttonImage: UIImage
 }
@@ -57,7 +65,7 @@ class GreenCell: UITableViewCell {
 	let button: UIButton = { return UIButton() }()
 }
 
-extension GreenCell: DataDisplaying {
+extension GreenCell: ModelConfigurable {
 	func configure(with model: GreenCellViewData) {
 		configureButton(with: model.buttonImage)
 	}
@@ -66,7 +74,7 @@ extension GreenCell: DataDisplaying {
 		self.button.imageView?.image = image
 	}
 }
-
+///
 class BlueCell: UITableViewCell {
 	let textField: UITextField = {
 		let field = UITextField()
@@ -78,7 +86,7 @@ struct BlueCellViewData {
 	let textFieldPlaceholder: String
 }
 
-extension BlueCell: DataDisplaying {
+extension BlueCell: ModelConfigurable {
 	func configure(with model: BlueCellViewData) {
 		self.configureTextField(with: model.textFieldPlaceholder)
 	}
