@@ -8,8 +8,10 @@
 
 import UIKit
 
-public class DataManager: DataManaging {
-	
+public enum SectionType: Int, CaseIterable {
+	case RedSection
+	case GreenSection
+	case BlueSection
 }
 
 public class TableViewModel: TableViewModeling {

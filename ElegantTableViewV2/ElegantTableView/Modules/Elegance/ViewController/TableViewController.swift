@@ -15,12 +15,6 @@ public protocol TableViewControlling {
 	init(tableViewModel: TableViewModeling)
 }
 
-public enum SectionType: Int, CaseIterable {
-	case RedSection
-	case GreenSection
-	case BlueSection
-}
-
 public class TableViewController: UIViewController, TableViewControlling {
 	// MARK:- Instance data.
 	private var tableViewModel: TableViewModeling
