@@ -3,12 +3,46 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		53A3BD4F22B84A1B001B4F64 /* FullStockHistory.json in Resources */ = {isa = PBXBuildFile; fileRef = 53A3BD4E22B84A1B001B4F64 /* FullStockHistory.json */; };
-		53A3BD6322B85621001B4F64 /* StockHistory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 53A3BD6122B85621001B4F64 /* StockHistory.xcdatamodeld */; };
+		42EEA6724042881BCEDDAD8C /* Pods_StockFetch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25D9C48F70BB0F67B26BACE9 /* Pods_StockFetch.framework */; };
+		47D3B2B269DD717F0DF0D726 /* Pods_StockFetchUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F525E68AB644B08F591A92C7 /* Pods_StockFetchUITests.framework */; };
+		53005A7122C184CC008F02C5 /* StockSymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53005A7022C184CC008F02C5 /* StockSymbolsViewController.swift */; };
+		53005A7322C184E5008F02C5 /* StockSymbolsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53005A7222C184E5008F02C5 /* StockSymbolsCoordinator.swift */; };
+		53005A7522C185DA008F02C5 /* StockSymbolsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53005A7422C185DA008F02C5 /* StockSymbolsViewModel.swift */; };
+		53005A7722C1861E008F02C5 /* StockSymbolDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53005A7622C1861E008F02C5 /* StockSymbolDataManager.swift */; };
+		53005A7922C18692008F02C5 /* StockSymbolsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53005A7822C18692008F02C5 /* StockSymbolsModel.swift */; };
+		5311C88F22C4736000E49928 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5311C88E22C4736000E49928 /* GoogleService-Info.plist */; };
+		5311C89322C58E4B00E49928 /* StockHistory.json in Resources */ = {isa = PBXBuildFile; fileRef = 5311C89222C58E4B00E49928 /* StockHistory.json */; };
+		5311C89522C593BC00E49928 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311C89422C593BC00E49928 /* UIViewExtensions.swift */; };
+		5311C89722C59C7400E49928 /* StockPlotDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311C89622C59C7400E49928 /* StockPlotDataManager.swift */; };
+		5311C89A22C5A3A700E49928 /* TableViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311C89922C5A3A700E49928 /* TableViewCellProtocol.swift */; };
+		5311C89C22C5ABE700E49928 /* StockPlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311C89B22C5ABE700E49928 /* StockPlotCell.swift */; };
+		5311C89F22C5AD8400E49928 /* StockPlotViewDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5311C89E22C5AD8400E49928 /* StockPlotViewDataModel.swift */; };
+		53A211B022BAEDD600E14B3E /* NetworkingProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A211AF22BAEDD600E14B3E /* NetworkingProtocols.swift */; };
+		53A3425122BE2D1B003B8362 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3424F22BE2D1B003B8362 /* ParameterEncoding.swift */; };
+		53A3425222BE2D1B003B8362 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3424E22BE2D1B003B8362 /* JSONParameterEncoder.swift */; };
+		53A3425322BE2D1B003B8362 /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3425022BE2D1B003B8362 /* URLParameterEncoder.swift */; };
+		53A3426422BE2D6F003B8362 /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3425E22BE2D6E003B8362 /* NetworkLogger.swift */; };
+		53A3426522BE2D6F003B8362 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3425F22BE2D6E003B8362 /* NetworkRouter.swift */; };
+		53A3426622BE2D6F003B8362 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3426122BE2D6E003B8362 /* HTTPTask.swift */; };
+		53A3426722BE2D6F003B8362 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3426022BE2D6E003B8362 /* Router.swift */; };
+		53A3426822BE2D6F003B8362 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3426222BE2D6E003B8362 /* EndPointType.swift */; };
+		53A3426922BE2D6F003B8362 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3426322BE2D6F003B8362 /* HTTPMethod.swift */; };
+		53A3426C22BE2DBE003B8362 /* AlphaAdvantageEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3426B22BE2DBE003B8362 /* AlphaAdvantageEndpoint.swift */; };
+		53A3427022BE2F84003B8362 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3426F22BE2F84003B8362 /* NetworkManager.swift */; };
+		53A3427222BE3373003B8362 /* AlphaAdvantageDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3427122BE3373003B8362 /* AlphaAdvantageDataManager.swift */; };
+		53A3427422BE3966003B8362 /* AlphaAdvantageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3427322BE3966003B8362 /* AlphaAdvantageModel.swift */; };
+		53A3427922BE48AD003B8362 /* AlphaAdvantageAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3427822BE48AD003B8362 /* AlphaAdvantageAPITests.swift */; };
+		53A3427B22BE493B003B8362 /* CompactTimeSeries5min.json in Resources */ = {isa = PBXBuildFile; fileRef = 53A3427A22BE493B003B8362 /* CompactTimeSeries5min.json */; };
+		53A3427E22BE4C8D003B8362 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3427D22BE4C8D003B8362 /* Date.swift */; };
+		53A3428422BE4DC7003B8362 /* StockPlotViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3428322BE4DC7003B8362 /* StockPlotViewController.swift */; };
+		53A3428622BE4DF6003B8362 /* StockPlotCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3428522BE4DF6003B8362 /* StockPlotCoordinator.swift */; };
+		53A3428822BE4E0B003B8362 /* StockPlotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A3428722BE4E0A003B8362 /* StockPlotViewModel.swift */; };
+		53A3428F22BE6EAF003B8362 /* take2.json in Resources */ = {isa = PBXBuildFile; fileRef = 53A3428E22BE6EAF003B8362 /* take2.json */; };
+		53D7300422C45DE400FB7762 /* FirebaseEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D7300322C45DE400FB7762 /* FirebaseEndpoint.swift */; };
 		53F06B5822B5CB460099B7EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F06B5722B5CB460099B7EA /* AppDelegate.swift */; };
 		53F06B5A22B5CB460099B7EA /* StocksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F06B5922B5CB460099B7EA /* StocksViewController.swift */; };
 		53F06B5F22B5CB480099B7EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F06B5E22B5CB480099B7EA /* Assets.xcassets */; };
@@ -20,7 +54,8 @@
 		53F06BD022B704510099B7EA /* StocksTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F06BCF22B704510099B7EA /* StocksTableView.swift */; };
 		53F06BD422B7094E0099B7EA /* StockDateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F06BD322B7094E0099B7EA /* StockDateViewModel.swift */; };
 		53F06BD622B70C9C0099B7EA /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F06BD522B70C9C0099B7EA /* StockCell.swift */; };
-		53F06C1422B737860099B7EA /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F06C1322B737860099B7EA /* CustomView.swift */; };
+		53F06C1422B737860099B7EA /* E3StockPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F06C1322B737860099B7EA /* E3StockPlot.swift */; };
+		A7B6F8800A7C2D77106585E0 /* Pods_StockFetchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD9D8F0E510389EF80AE240 /* Pods_StockFetchTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +76,44 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		53A3BD4E22B84A1B001B4F64 /* FullStockHistory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FullStockHistory.json; sourceTree = SOURCE_ROOT; };
-		53A3BD6222B85621001B4F64 /* StockHistory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StockHistory.xcdatamodel; sourceTree = "<group>"; };
+		25D9C48F70BB0F67B26BACE9 /* Pods_StockFetch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockFetch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		32E1637CD66D57AA23315B80 /* Pods-StockFetchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFetchTests.debug.xcconfig"; path = "Target Support Files/Pods-StockFetchTests/Pods-StockFetchTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4FD9D8F0E510389EF80AE240 /* Pods_StockFetchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockFetchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53005A7022C184CC008F02C5 /* StockSymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbolsViewController.swift; sourceTree = "<group>"; };
+		53005A7222C184E5008F02C5 /* StockSymbolsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbolsCoordinator.swift; sourceTree = "<group>"; };
+		53005A7422C185DA008F02C5 /* StockSymbolsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbolsViewModel.swift; sourceTree = "<group>"; };
+		53005A7622C1861E008F02C5 /* StockSymbolDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbolDataManager.swift; sourceTree = "<group>"; };
+		53005A7822C18692008F02C5 /* StockSymbolsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbolsModel.swift; sourceTree = "<group>"; };
+		5311C88B22C46FBD00E49928 /* Extensions */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Extensions; path = "/Users/ernestdefoy/Code/iOS/Repos/Daily-Project-Challenge/StockFetch/StockFetch/New Group/Extensions"; sourceTree = "<absolute>"; };
+		5311C88E22C4736000E49928 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5311C89222C58E4B00E49928 /* StockHistory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = StockHistory.json; sourceTree = "<group>"; };
+		5311C89422C593BC00E49928 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		5311C89622C59C7400E49928 /* StockPlotDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPlotDataManager.swift; sourceTree = "<group>"; };
+		5311C89922C5A3A700E49928 /* TableViewCellProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellProtocol.swift; sourceTree = "<group>"; };
+		5311C89B22C5ABE700E49928 /* StockPlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPlotCell.swift; sourceTree = "<group>"; };
+		5311C89E22C5AD8400E49928 /* StockPlotViewDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPlotViewDataModel.swift; sourceTree = "<group>"; };
+		53A211AF22BAEDD600E14B3E /* NetworkingProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingProtocols.swift; sourceTree = "<group>"; };
+		53A3424E22BE2D1B003B8362 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		53A3424F22BE2D1B003B8362 /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		53A3425022BE2D1B003B8362 /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		53A3425E22BE2D6E003B8362 /* NetworkLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		53A3425F22BE2D6E003B8362 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		53A3426022BE2D6E003B8362 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		53A3426122BE2D6E003B8362 /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		53A3426222BE2D6E003B8362 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		53A3426322BE2D6F003B8362 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		53A3426B22BE2DBE003B8362 /* AlphaAdvantageEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaAdvantageEndpoint.swift; sourceTree = "<group>"; };
+		53A3426F22BE2F84003B8362 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		53A3427122BE3373003B8362 /* AlphaAdvantageDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaAdvantageDataManager.swift; sourceTree = "<group>"; };
+		53A3427322BE3966003B8362 /* AlphaAdvantageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaAdvantageModel.swift; sourceTree = "<group>"; };
+		53A3427822BE48AD003B8362 /* AlphaAdvantageAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaAdvantageAPITests.swift; sourceTree = "<group>"; };
+		53A3427A22BE493B003B8362 /* CompactTimeSeries5min.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CompactTimeSeries5min.json; sourceTree = "<group>"; };
+		53A3427D22BE4C8D003B8362 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		53A3428322BE4DC7003B8362 /* StockPlotViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPlotViewController.swift; sourceTree = "<group>"; };
+		53A3428522BE4DF6003B8362 /* StockPlotCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPlotCoordinator.swift; sourceTree = "<group>"; };
+		53A3428722BE4E0A003B8362 /* StockPlotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPlotViewModel.swift; sourceTree = "<group>"; };
+		53A3428E22BE6EAF003B8362 /* take2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = take2.json; sourceTree = "<group>"; };
+		53D7300322C45DE400FB7762 /* FirebaseEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseEndpoint.swift; sourceTree = "<group>"; };
 		53F06B5422B5CB460099B7EA /* StockFetch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockFetch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53F06B5722B5CB460099B7EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53F06B5922B5CB460099B7EA /* StocksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +131,13 @@
 		53F06BCF22B704510099B7EA /* StocksTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksTableView.swift; sourceTree = "<group>"; };
 		53F06BD322B7094E0099B7EA /* StockDateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockDateViewModel.swift; sourceTree = "<group>"; };
 		53F06BD522B70C9C0099B7EA /* StockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
-		53F06C1322B737860099B7EA /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		53F06C1322B737860099B7EA /* E3StockPlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = E3StockPlot.swift; sourceTree = "<group>"; };
+		6D18B6EEDEBFB952D6E14929 /* Pods-StockFetchUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFetchUITests.debug.xcconfig"; path = "Target Support Files/Pods-StockFetchUITests/Pods-StockFetchUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7DAA539E5AAAF3C52B0EFD87 /* Pods-StockFetchUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFetchUITests.release.xcconfig"; path = "Target Support Files/Pods-StockFetchUITests/Pods-StockFetchUITests.release.xcconfig"; sourceTree = "<group>"; };
+		99331A79EF74209FE09CD980 /* Pods-StockFetchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFetchTests.release.xcconfig"; path = "Target Support Files/Pods-StockFetchTests/Pods-StockFetchTests.release.xcconfig"; sourceTree = "<group>"; };
+		A272441764B1A408ADC5D6CB /* Pods-StockFetch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFetch.release.xcconfig"; path = "Target Support Files/Pods-StockFetch/Pods-StockFetch.release.xcconfig"; sourceTree = "<group>"; };
+		C59931942EFE16D768F5C95A /* Pods-StockFetch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockFetch.debug.xcconfig"; path = "Target Support Files/Pods-StockFetch/Pods-StockFetch.debug.xcconfig"; sourceTree = "<group>"; };
+		F525E68AB644B08F591A92C7 /* Pods_StockFetchUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockFetchUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42EEA6724042881BCEDDAD8C /* Pods_StockFetch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +153,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B6F8800A7C2D77106585E0 /* Pods_StockFetchTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,25 +161,231 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D3B2B269DD717F0DF0D726 /* Pods_StockFetchUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		53A3BD5F22B855EE001B4F64 /* Data */ = {
+		51B41F846AFA817201C12839 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				25D9C48F70BB0F67B26BACE9 /* Pods_StockFetch.framework */,
+				4FD9D8F0E510389EF80AE240 /* Pods_StockFetchTests.framework */,
+				F525E68AB644B08F591A92C7 /* Pods_StockFetchUITests.framework */,
 			);
-			path = Data;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		53A3BD6022B85612001B4F64 /* Resources */ = {
+		53005A6F22C18483008F02C5 /* StockSymbolsDashboard */ = {
 			isa = PBXGroup;
 			children = (
-				53A3BD6122B85621001B4F64 /* StockHistory.xcdatamodeld */,
+				53005A7022C184CC008F02C5 /* StockSymbolsViewController.swift */,
+				53005A7222C184E5008F02C5 /* StockSymbolsCoordinator.swift */,
+				53005A7422C185DA008F02C5 /* StockSymbolsViewModel.swift */,
+				53005A7622C1861E008F02C5 /* StockSymbolDataManager.swift */,
+				53005A7822C18692008F02C5 /* StockSymbolsModel.swift */,
 			);
-			path = Resources;
+			path = StockSymbolsDashboard;
+			sourceTree = "<group>";
+		};
+		5311C89822C5A39400E49928 /* MVVM-C */ = {
+			isa = PBXGroup;
+			children = (
+				5311C89922C5A3A700E49928 /* TableViewCellProtocol.swift */,
+			);
+			path = "MVVM-C";
+			sourceTree = "<group>";
+		};
+		5311C89D22C5AD2600E49928 /* New Modules June 27 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Modules June 27";
+			sourceTree = "<group>";
+		};
+		5311C8A022C5AE1900E49928 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5311C89B22C5ABE700E49928 /* StockPlotCell.swift */,
+				53F06C1322B737860099B7EA /* E3StockPlot.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5311C8A122C5AE2000E49928 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5311C89E22C5AD8400E49928 /* StockPlotViewDataModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5311C8A222C5AE3000E49928 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				53A3428722BE4E0A003B8362 /* StockPlotViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		5311C8A322C5AE4A00E49928 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				53A3428322BE4DC7003B8362 /* StockPlotViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		5311C8A422C5AE5500E49928 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				53A3428522BE4DF6003B8362 /* StockPlotCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		5311C8A522C5AE6200E49928 /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				5311C89622C59C7400E49928 /* StockPlotDataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		53A3424322BE2C46003B8362 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5311C89822C5A39400E49928 /* MVVM-C */,
+				53A3429822C011D8003B8362 /* Base Classes */,
+				53A3426E22BE2F5D003B8362 /* Added */,
+				53A3425422BE2D26003B8362 /* Encoding */,
+				53A3426A22BE2D7A003B8362 /* Service */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		53A3425422BE2D26003B8362 /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				53A3424E22BE2D1B003B8362 /* JSONParameterEncoder.swift */,
+				53A3424F22BE2D1B003B8362 /* ParameterEncoding.swift */,
+				53A3425022BE2D1B003B8362 /* URLParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		53A3426A22BE2D7A003B8362 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				53A3426222BE2D6E003B8362 /* EndPointType.swift */,
+				53A3426322BE2D6F003B8362 /* HTTPMethod.swift */,
+				53A3426122BE2D6E003B8362 /* HTTPTask.swift */,
+				53A3425E22BE2D6E003B8362 /* NetworkLogger.swift */,
+				53A3425F22BE2D6E003B8362 /* NetworkRouter.swift */,
+				53A3426022BE2D6E003B8362 /* Router.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		53A3426E22BE2F5D003B8362 /* Added */ = {
+			isa = PBXGroup;
+			children = (
+				53A3426F22BE2F84003B8362 /* NetworkManager.swift */,
+			);
+			path = Added;
+			sourceTree = "<group>";
+		};
+		53A3427722BE4877003B8362 /* AlphaAdvantage */ = {
+			isa = PBXGroup;
+			children = (
+				53A3427822BE48AD003B8362 /* AlphaAdvantageAPITests.swift */,
+				53A3427A22BE493B003B8362 /* CompactTimeSeries5min.json */,
+				53A3428E22BE6EAF003B8362 /* take2.json */,
+			);
+			path = AlphaAdvantage;
+			sourceTree = "<group>";
+		};
+		53A3427C22BE4C7F003B8362 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				53A3427D22BE4C8D003B8362 /* Date.swift */,
+				5311C89422C593BC00E49928 /* UIViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		53A3427F22BE4CD2003B8362 /* Alpha_Advantage_API */ = {
+			isa = PBXGroup;
+			children = (
+				53A3426B22BE2DBE003B8362 /* AlphaAdvantageEndpoint.swift */,
+				53A3427122BE3373003B8362 /* AlphaAdvantageDataManager.swift */,
+				53A3427322BE3966003B8362 /* AlphaAdvantageModel.swift */,
+			);
+			path = Alpha_Advantage_API;
+			sourceTree = "<group>";
+		};
+		53A3428022BE4CFF003B8362 /* Experimental */ = {
+			isa = PBXGroup;
+			children = (
+				53A211AF22BAEDD600E14B3E /* NetworkingProtocols.swift */,
+			);
+			path = Experimental;
+			sourceTree = "<group>";
+		};
+		53A3428122BE4D20003B8362 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				5311C89D22C5AD2600E49928 /* New Modules June 27 */,
+				53005A6F22C18483008F02C5 /* StockSymbolsDashboard */,
+				53A3428222BE4D2A003B8362 /* StockPlot */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		53A3428222BE4D2A003B8362 /* StockPlot */ = {
+			isa = PBXGroup;
+			children = (
+				5311C8A422C5AE5500E49928 /* Coordinator */,
+				5311C8A322C5AE4A00E49928 /* ViewController */,
+				5311C8A222C5AE3000E49928 /* ViewModel */,
+				5311C8A522C5AE6200E49928 /* DataManager */,
+				5311C8A022C5AE1900E49928 /* View */,
+				5311C8A122C5AE2000E49928 /* Model */,
+				53A3428922BE4E19003B8362 /* OldStockFetchStuff */,
+			);
+			path = StockPlot;
+			sourceTree = "<group>";
+		};
+		53A3428922BE4E19003B8362 /* OldStockFetchStuff */ = {
+			isa = PBXGroup;
+			children = (
+				5311C89222C58E4B00E49928 /* StockHistory.json */,
+				53F06BD522B70C9C0099B7EA /* StockCell.swift */,
+				53F06BD322B7094E0099B7EA /* StockDateViewModel.swift */,
+				53F06BCB22B6CD3D0099B7EA /* StockDateModel.swift */,
+				53F06BCF22B704510099B7EA /* StocksTableView.swift */,
+				53F06B5922B5CB460099B7EA /* StocksViewController.swift */,
+				53F06B8522B5CB5D0099B7EA /* NetworkRequest.swift */,
+			);
+			path = OldStockFetchStuff;
+			sourceTree = "<group>";
+		};
+		53A3429822C011D8003B8362 /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Base Classes";
+			sourceTree = "<group>";
+		};
+		53D7300222C45DD000FB7762 /* FireBaseDataManagement */ = {
+			isa = PBXGroup;
+			children = (
+				5311C88B22C46FBD00E49928 /* Extensions */,
+				53D7300322C45DE400FB7762 /* FirebaseEndpoint.swift */,
+			);
+			path = FireBaseDataManagement;
 			sourceTree = "<group>";
 		};
 		53F06B4B22B5CB460099B7EA = {
@@ -110,6 +395,8 @@
 				53F06B6B22B5CB480099B7EA /* StockFetchTests */,
 				53F06B7622B5CB490099B7EA /* StockFetchUITests */,
 				53F06B5522B5CB460099B7EA /* Products */,
+				BA76763D217F65BEC8AE5FFF /* Pods */,
+				51B41F846AFA817201C12839 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,19 +413,16 @@
 		53F06B5622B5CB460099B7EA /* StockFetch */ = {
 			isa = PBXGroup;
 			children = (
-				53A3BD6022B85612001B4F64 /* Resources */,
-				53A3BD5F22B855EE001B4F64 /* Data */,
-				53A3BD4E22B84A1B001B4F64 /* FullStockHistory.json */,
+				53D7300222C45DD000FB7762 /* FireBaseDataManagement */,
+				53F06B5722B5CB460099B7EA /* AppDelegate.swift */,
+				53A3428122BE4D20003B8362 /* Modules */,
+				53A3428022BE4CFF003B8362 /* Experimental */,
+				53A3427F22BE4CD2003B8362 /* Alpha_Advantage_API */,
+				53A3427C22BE4C7F003B8362 /* Extensions */,
+				53A3424322BE2C46003B8362 /* Protocols */,
 				53F06B5E22B5CB480099B7EA /* Assets.xcassets */,
 				53F06B6322B5CB480099B7EA /* Info.plist */,
-				53F06B5722B5CB460099B7EA /* AppDelegate.swift */,
-				53F06B5922B5CB460099B7EA /* StocksViewController.swift */,
-				53F06B8522B5CB5D0099B7EA /* NetworkRequest.swift */,
-				53F06BCF22B704510099B7EA /* StocksTableView.swift */,
-				53F06BCB22B6CD3D0099B7EA /* StockDateModel.swift */,
-				53F06BD322B7094E0099B7EA /* StockDateViewModel.swift */,
-				53F06BD522B70C9C0099B7EA /* StockCell.swift */,
-				53F06C1322B737860099B7EA /* CustomView.swift */,
+				5311C88E22C4736000E49928 /* GoogleService-Info.plist */,
 			);
 			path = StockFetch;
 			sourceTree = "<group>";
@@ -146,6 +430,7 @@
 		53F06B6B22B5CB480099B7EA /* StockFetchTests */ = {
 			isa = PBXGroup;
 			children = (
+				53A3427722BE4877003B8362 /* AlphaAdvantage */,
 				53F06BCD22B6CDE20099B7EA /* StockHistory.json */,
 				53F06B6C22B5CB480099B7EA /* StockFetchTests.swift */,
 				53F06B6E22B5CB480099B7EA /* Info.plist */,
@@ -162,6 +447,19 @@
 			path = StockFetchUITests;
 			sourceTree = "<group>";
 		};
+		BA76763D217F65BEC8AE5FFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C59931942EFE16D768F5C95A /* Pods-StockFetch.debug.xcconfig */,
+				A272441764B1A408ADC5D6CB /* Pods-StockFetch.release.xcconfig */,
+				32E1637CD66D57AA23315B80 /* Pods-StockFetchTests.debug.xcconfig */,
+				99331A79EF74209FE09CD980 /* Pods-StockFetchTests.release.xcconfig */,
+				6D18B6EEDEBFB952D6E14929 /* Pods-StockFetchUITests.debug.xcconfig */,
+				7DAA539E5AAAF3C52B0EFD87 /* Pods-StockFetchUITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -169,9 +467,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53F06B7C22B5CB490099B7EA /* Build configuration list for PBXNativeTarget "StockFetch" */;
 			buildPhases = (
+				BDD01F6129E5137D64B18DAB /* [CP] Check Pods Manifest.lock */,
 				53F06B5022B5CB460099B7EA /* Sources */,
 				53F06B5122B5CB460099B7EA /* Frameworks */,
 				53F06B5222B5CB460099B7EA /* Resources */,
+				A6DE467494489D26B8966E1F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -186,6 +486,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53F06B7F22B5CB490099B7EA /* Build configuration list for PBXNativeTarget "StockFetchTests" */;
 			buildPhases = (
+				26413AC5A8607F9C81A6CB6C /* [CP] Check Pods Manifest.lock */,
 				53F06B6422B5CB480099B7EA /* Sources */,
 				53F06B6522B5CB480099B7EA /* Frameworks */,
 				53F06B6622B5CB480099B7EA /* Resources */,
@@ -204,6 +505,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53F06B8222B5CB490099B7EA /* Build configuration list for PBXNativeTarget "StockFetchUITests" */;
 			buildPhases = (
+				56130F960D12CAA1E78ECB93 /* [CP] Check Pods Manifest.lock */,
 				53F06B6F22B5CB480099B7EA /* Sources */,
 				53F06B7022B5CB480099B7EA /* Frameworks */,
 				53F06B7122B5CB480099B7EA /* Resources */,
@@ -266,8 +568,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53A3BD4F22B84A1B001B4F64 /* FullStockHistory.json in Resources */,
 				53F06B5F22B5CB480099B7EA /* Assets.xcassets in Resources */,
+				5311C89322C58E4B00E49928 /* StockHistory.json in Resources */,
+				5311C88F22C4736000E49928 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +578,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53A3427B22BE493B003B8362 /* CompactTimeSeries5min.json in Resources */,
+				53A3428F22BE6EAF003B8362 /* take2.json in Resources */,
 				53F06BCE22B6CDE20099B7EA /* StockHistory.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,20 +593,134 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26413AC5A8607F9C81A6CB6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StockFetchTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56130F960D12CAA1E78ECB93 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StockFetchUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A6DE467494489D26B8966E1F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StockFetch/Pods-StockFetch-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StockFetch/Pods-StockFetch-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StockFetch/Pods-StockFetch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDD01F6129E5137D64B18DAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-StockFetch-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		53F06B5022B5CB460099B7EA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5311C89A22C5A3A700E49928 /* TableViewCellProtocol.swift in Sources */,
+				5311C89F22C5AD8400E49928 /* StockPlotViewDataModel.swift in Sources */,
+				5311C89C22C5ABE700E49928 /* StockPlotCell.swift in Sources */,
+				53005A7522C185DA008F02C5 /* StockSymbolsViewModel.swift in Sources */,
 				53F06BD022B704510099B7EA /* StocksTableView.swift in Sources */,
-				53F06C1422B737860099B7EA /* CustomView.swift in Sources */,
+				53F06C1422B737860099B7EA /* E3StockPlot.swift in Sources */,
 				53F06BD422B7094E0099B7EA /* StockDateViewModel.swift in Sources */,
+				53A3427222BE3373003B8362 /* AlphaAdvantageDataManager.swift in Sources */,
 				53F06BD622B70C9C0099B7EA /* StockCell.swift in Sources */,
-				53A3BD6322B85621001B4F64 /* StockHistory.xcdatamodeld in Sources */,
+				53A3428422BE4DC7003B8362 /* StockPlotViewController.swift in Sources */,
+				53A3425122BE2D1B003B8362 /* ParameterEncoding.swift in Sources */,
+				53A3426622BE2D6F003B8362 /* HTTPTask.swift in Sources */,
 				53F06B8622B5CB5D0099B7EA /* NetworkRequest.swift in Sources */,
+				53A3428822BE4E0B003B8362 /* StockPlotViewModel.swift in Sources */,
+				53005A7122C184CC008F02C5 /* StockSymbolsViewController.swift in Sources */,
 				53F06B5A22B5CB460099B7EA /* StocksViewController.swift in Sources */,
+				53A3427422BE3966003B8362 /* AlphaAdvantageModel.swift in Sources */,
+				53005A7722C1861E008F02C5 /* StockSymbolDataManager.swift in Sources */,
+				53A3425322BE2D1B003B8362 /* URLParameterEncoder.swift in Sources */,
+				53A3425222BE2D1B003B8362 /* JSONParameterEncoder.swift in Sources */,
+				53A211B022BAEDD600E14B3E /* NetworkingProtocols.swift in Sources */,
+				53A3427022BE2F84003B8362 /* NetworkManager.swift in Sources */,
+				53D7300422C45DE400FB7762 /* FirebaseEndpoint.swift in Sources */,
+				53005A7322C184E5008F02C5 /* StockSymbolsCoordinator.swift in Sources */,
+				53A3426722BE2D6F003B8362 /* Router.swift in Sources */,
+				5311C89522C593BC00E49928 /* UIViewExtensions.swift in Sources */,
+				53A3426922BE2D6F003B8362 /* HTTPMethod.swift in Sources */,
 				53F06BCC22B6CD3D0099B7EA /* StockDateModel.swift in Sources */,
+				53A3426422BE2D6F003B8362 /* NetworkLogger.swift in Sources */,
+				53005A7922C18692008F02C5 /* StockSymbolsModel.swift in Sources */,
 				53F06B5822B5CB460099B7EA /* AppDelegate.swift in Sources */,
+				53A3428622BE4DF6003B8362 /* StockPlotCoordinator.swift in Sources */,
+				5311C89722C59C7400E49928 /* StockPlotDataManager.swift in Sources */,
+				53A3426522BE2D6F003B8362 /* NetworkRouter.swift in Sources */,
+				53A3426822BE2D6F003B8362 /* EndPointType.swift in Sources */,
+				53A3427E22BE4C8D003B8362 /* Date.swift in Sources */,
+				53A3426C22BE2DBE003B8362 /* AlphaAdvantageEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +729,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53F06B6D22B5CB480099B7EA /* StockFetchTests.swift in Sources */,
+				53A3427922BE48AD003B8362 /* AlphaAdvantageAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +875,7 @@
 		};
 		53F06B7D22B5CB490099B7EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C59931942EFE16D768F5C95A /* Pods-StockFetch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -467,11 +888,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				k = "";
 			};
 			name = Debug;
 		};
 		53F06B7E22B5CB490099B7EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A272441764B1A408ADC5D6CB /* Pods-StockFetch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -484,11 +907,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				k = "";
 			};
 			name = Release;
 		};
 		53F06B8022B5CB490099B7EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32E1637CD66D57AA23315B80 /* Pods-StockFetchTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -509,6 +934,7 @@
 		};
 		53F06B8122B5CB490099B7EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99331A79EF74209FE09CD980 /* Pods-StockFetchTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -529,6 +955,7 @@
 		};
 		53F06B8322B5CB490099B7EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D18B6EEDEBFB952D6E14929 /* Pods-StockFetchUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +975,7 @@
 		};
 		53F06B8422B5CB490099B7EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7DAA539E5AAAF3C52B0EFD87 /* Pods-StockFetchUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -605,19 +1033,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		53A3BD6122B85621001B4F64 /* StockHistory.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				53A3BD6222B85621001B4F64 /* StockHistory.xcdatamodel */,
-			);
-			currentVersion = 53A3BD6222B85621001B4F64 /* StockHistory.xcdatamodel */;
-			path = StockHistory.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 53F06B4C22B5CB460099B7EA /* Project object */;
 }

@@ -7,23 +7,28 @@
 //
 
 import UIKit
-import Foundation
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+	
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-//        let fetcher = Fetch()
-//        fetcher.fetch()
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = StocksViewController()
+		
+		let dataManager = AlphaAdvantageDataManager()
+		let viewModel = StockPlotViewModel(dataManager: dataManager)
+		let viewController = StockPlotViewController(viewModel: viewModel)
+        window?.rootViewController = viewController
+//		let viewController = StocksViewController()
+//		window?.rootViewController = viewController
+
         window?.makeKeyAndVisible()
-        
+//Fires
+				FirebaseApp.configure()
+
         return true
     }
 

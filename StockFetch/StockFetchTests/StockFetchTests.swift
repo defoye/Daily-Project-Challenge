@@ -12,8 +12,9 @@ import XCTest
 class StockFetchTests: XCTestCase {
     
     func testFetchOrder() {
-        
-    }
+        let stocks = StockPlotViewController()
+
+	}
     
     func testStockHistoryDecoding() {
         

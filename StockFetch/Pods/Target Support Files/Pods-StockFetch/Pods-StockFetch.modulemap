@@ -1,0 +1,6 @@
+framework module Pods_StockFetch {
+  umbrella header "Pods-StockFetch-umbrella.h"
+
+  export *
+  module * { export * }
+}
