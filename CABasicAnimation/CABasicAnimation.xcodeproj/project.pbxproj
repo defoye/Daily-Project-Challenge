@@ -12,6 +12,8 @@
 		531683D122CDFDB900F91810 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531683CF22CDFDB900F91810 /* Main.storyboard */; };
 		531683D322CDFDBA00F91810 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 531683D222CDFDBA00F91810 /* Assets.xcassets */; };
 		531683D622CDFDBA00F91810 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 531683D422CDFDBA00F91810 /* LaunchScreen.storyboard */; };
+		531683DE22CDFDF500F91810 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531683DD22CDFDF500F91810 /* Line.swift */; };
+		531683E022CE002F00F91810 /* PopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531683DF22CE002F00F91810 /* PopView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		531683D222CDFDBA00F91810 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		531683D522CDFDBA00F91810 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		531683D722CDFDBA00F91810 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		531683DD22CDFDF500F91810 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		531683DF22CE002F00F91810 /* PopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				531683D222CDFDBA00F91810 /* Assets.xcassets */,
 				531683D422CDFDBA00F91810 /* LaunchScreen.storyboard */,
 				531683D722CDFDBA00F91810 /* Info.plist */,
+				531683DD22CDFDF500F91810 /* Line.swift */,
+				531683DF22CE002F00F91810 /* PopView.swift */,
 			);
 			path = CABasicAnimation;
 			sourceTree = "<group>";
@@ -135,7 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				531683DE22CDFDF500F91810 /* Line.swift in Sources */,
 				531683CE22CDFDB900F91810 /* ViewController.swift in Sources */,
+				531683E022CE002F00F91810 /* PopView.swift in Sources */,
 				531683CC22CDFDB900F91810 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
