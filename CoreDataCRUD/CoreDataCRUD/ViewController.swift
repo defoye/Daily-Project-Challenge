@@ -20,26 +20,42 @@ public struct DataEntity {
 }
 
 class ViewController: UIViewController {
+	
+	let appContext: AppContext? = {
+		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
+		return AppContext(context: appDelegate.persistentContainer.viewContext)
+	}()
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		self.view.backgroundColor = .orange
-//		createData()
-//		AppContext.deleteData(entity: DataEntity.USER,
-//				   predicate: NSPredicate(format: "username = %@", "DeFoye1"))
-		AppContext.deleteData(entity: DataEntity.USER,
-							  predicate: NSPredicate(format: "username = %@", "DeFoye1"))
-		
-//		updateData(entity: DataEntity.USER,
-//				   predicate: NSPredicate(format: "username = %@", "defoye1"),
-//				   newValue: "DeFoye1",
-//				   key: "username")
+		createData()
+//		deleteAllUsers()
+		appContext?.updateData(entity: DataEntity.USER,
+				   predicate: NSPredicate(format: "username = %@", "defoye1"),
+				   newValue: "DeFoye1",
+				   key: "username")
 		retrieveData(entity: DataEntity.USER)
+	}
+	
+	func deleteAllUsers() {
+		appContext?.deleteData(entity: DataEntity.USER,
+							   predicate: NSPredicate(format: "username = %@", "DeFoye1"))
+		appContext?.deleteData(entity: DataEntity.USER,
+							   predicate: NSPredicate(format: "username = %@", "defoye1"))
+		appContext?.deleteData(entity: DataEntity.USER,
+							   predicate: NSPredicate(format: "username = %@", "defoye2"))
+		appContext?.deleteData(entity: DataEntity.USER,
+							   predicate: NSPredicate(format: "username = %@", "defoye3"))
+		appContext?.deleteData(entity: DataEntity.USER,
+							   predicate: NSPredicate(format: "username = %@", "defoye4"))
+		appContext?.deleteData(entity: DataEntity.USER,
+							   predicate: NSPredicate(format: "username = %@", "defoye5"))
 	}
 
 	func createData() {
-		guard let viewContext = AppContext.managedContext else { return }
+		guard let viewContext = appContext?.managedContext else { return }
 
 		guard let userEntity = NSEntityDescription.entity(forEntityName: DataEntity.USER, in: viewContext) else { return }
 		
@@ -50,25 +66,15 @@ class ViewController: UIViewController {
 			user.setValue("defoye\(i*5)", forKey: DataKey.PASSWORD)
 		}
 		
-		AppContext.saveContext()
+		appContext?.saveContext()
 	}
 	
 	func retrieveData(entity: String) {
-		let objects: [NSManagedObject]? = AppContext.fetchData(entity: entity, predicate: nil)
+		let objects: [NSManagedObject]? = appContext?.fetchData(entity: entity, predicate: nil)
 
 		for data in objects as! [NSManagedObject] {
 			print(data.value(forKey: DataKey.USERNAME) as! String)
 		}
-	}
-	
-	func updateData(entity: String, predicate: NSPredicate, newValue: Any, key: String) {
-		guard let objects: [NSManagedObject] = AppContext.fetchData(entity: entity, predicate: predicate) else { return }
-
-		for obj in objects {
-			obj.setValue(newValue, forKey: key)
-		}
-		
-		AppContext.saveContext()
 	}
 }
 

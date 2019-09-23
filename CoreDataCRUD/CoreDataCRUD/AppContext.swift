@@ -10,13 +10,16 @@ import UIKit
 import CoreData
 
 public class AppContext {
-	static let managedContext: NSManagedObjectContext? = {
-		guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return nil }
-		return appDelegate.persistentContainer.viewContext
-	}()
 	
-	static func fetchData(entity: String, predicate: NSPredicate?) -> [NSManagedObject]? {
-		guard let viewContext = AppContext.managedContext else { return nil }
+	let managedContext: NSManagedObjectContext?
+	
+	public init(context: NSManagedObjectContext) {
+		self.managedContext = context
+	}
+	
+	func fetchData(entity: String, predicate: NSPredicate?) -> [NSManagedObject]? {
+		
+		guard let viewContext = self.managedContext else { return nil }
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
 		
 		if predicate != nil {
@@ -36,7 +39,7 @@ public class AppContext {
 		return nil
 	}
 	
-	static func fetchEntityDescription(name: String) -> NSEntityDescription? {
+	func fetchEntityDescription(name: String) -> NSEntityDescription? {
 		var entity: NSEntityDescription? = nil
 		
 		if let context = self.managedContext {
@@ -48,7 +51,7 @@ public class AppContext {
 		return entity
 	}
 	
-	static func saveContext() {
+	func saveContext() {
 		do {
 			try self.managedContext?.save()
 		} catch let err {
@@ -57,8 +60,8 @@ public class AppContext {
 		}
 	}
 	
-	static func deleteData(entity: String, predicate: NSPredicate) {
-		guard let viewContext = AppContext.managedContext else { return }
+	func deleteData(entity: String, predicate: NSPredicate) {
+		guard let viewContext = self.managedContext else { return }
 		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
 		
 		fetchRequest.predicate = predicate
@@ -77,4 +80,15 @@ public class AppContext {
 			print(err)
 		}
 	}
+	
+	func updateData(entity: String, predicate: NSPredicate, newValue: Any, key: String) {
+		guard let objects: [NSManagedObject] = self.fetchData(entity: entity, predicate: predicate) else { return }
+		
+		for obj in objects {
+			obj.setValue(newValue, forKey: key)
+		}
+		
+		self.saveContext()
+	}
+
 }
