@@ -25,13 +25,16 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		
 		self.view.backgroundColor = .orange
-		createData()
-		deleteData(entity: DataEntity.USER,
-				   predicate: NSPredicate(format: "username = %@", "DeFoye1"))
-		updateData(entity: DataEntity.USER,
-				   predicate: NSPredicate(format: "username = %@", "defoye1"),
-				   newValue: "DeFoye1",
-				   key: "username")
+//		createData()
+//		AppContext.deleteData(entity: DataEntity.USER,
+//				   predicate: NSPredicate(format: "username = %@", "DeFoye1"))
+		AppContext.deleteData(entity: DataEntity.USER,
+							  predicate: NSPredicate(format: "username = %@", "DeFoye1"))
+		
+//		updateData(entity: DataEntity.USER,
+//				   predicate: NSPredicate(format: "username = %@", "defoye1"),
+//				   newValue: "DeFoye1",
+//				   key: "username")
 		retrieveData(entity: DataEntity.USER)
 	}
 
@@ -47,11 +50,7 @@ class ViewController: UIViewController {
 			user.setValue("defoye\(i*5)", forKey: DataKey.PASSWORD)
 		}
 		
-		do {
-			try viewContext.save()
-		} catch let err as NSError {
-			print("Could not save")
-		}
+		AppContext.saveContext()
 	}
 	
 	func retrieveData(entity: String) {
@@ -69,30 +68,7 @@ class ViewController: UIViewController {
 			obj.setValue(newValue, forKey: key)
 		}
 		
-		do {
-			try AppContext.managedContext?.save()
-		} catch let err {
-			print(err)
-		}
-	}
-	
-	func deleteData(entity: String, predicate: NSPredicate) {
-		guard let viewContext = AppContext.managedContext else { return }
-		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
-		
-		fetchRequest.predicate = predicate
-		
-		do {
-			let result = try viewContext.fetch(fetchRequest)
-			
-			guard let objects = result as? [NSManagedObject] else { return }
-			
-			for object in objects {
-				viewContext.delete(object)
-			}
-		} catch let err {
-			print(err)
-		}
+		AppContext.saveContext()
 	}
 }
 

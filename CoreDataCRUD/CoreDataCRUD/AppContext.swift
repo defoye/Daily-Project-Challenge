@@ -47,4 +47,34 @@ public class AppContext {
 		
 		return entity
 	}
+	
+	static func saveContext() {
+		do {
+			try self.managedContext?.save()
+		} catch let err {
+			// TODO: Log error. 
+			print(err)
+		}
+	}
+	
+	static func deleteData(entity: String, predicate: NSPredicate) {
+		guard let viewContext = AppContext.managedContext else { return }
+		let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: entity)
+		
+		fetchRequest.predicate = predicate
+		
+		do {
+			let result = try viewContext.fetch(fetchRequest)
+			
+			guard let objects = result as? [NSManagedObject] else { return }
+			
+			for object in objects {
+				viewContext.delete(object)
+			}
+			
+			self.saveContext()
+		} catch let err {
+			print(err)
+		}
+	}
 }
